@@ -1,0 +1,123 @@
+/* src/sections/Projects.css */
+.projects-section {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.relative-container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Scoped Ambient Background */
+.projects-bg-ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.projects-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.projects-glow-orb--top {
+  width: 550px;
+  height: 550px;
+  top: -100px;
+  right: -120px;
+  background: radial-gradient(circle, #A855F7 0%, #7C3AED 50%, transparent 70%);
+  animation: orbDrift 16s ease-in-out infinite alternate;
+}
+
+.projects-glow-orb--bottom {
+  width: 480px;
+  height: 480px;
+  bottom: -60px;
+  left: -100px;
+  background: radial-gradient(circle, #7C3AED 0%, #C084FC 45%, transparent 70%);
+  animation: orbDrift 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes orbDrift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(40px, 30px) scale(1.1);
+  }
+}
+
+/* Fine futuristic grid restricted to Projects section */
+.projects-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(to right, rgba(168, 85, 247, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 85, 247, 0.035) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 80%);
+  opacity: 0.8;
+}
+
+/* Constellation Nodes */
+.projects-constellation-node {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--purple-bright);
+  box-shadow: 0 0 10px var(--purple);
+  animation: constellationPulse 4s ease-in-out infinite;
+}
+
+.projects-constellation-node.node-1 {
+  top: 18%;
+  left: 12%;
+  animation-delay: 0s;
+}
+
+.projects-constellation-node.node-2 {
+  top: 35%;
+  right: 14%;
+  animation-delay: 1.5s;
+}
+
+.projects-constellation-node.node-3 {
+  bottom: 22%;
+  left: 8%;
+  animation-delay: 2.8s;
+}
+
+.projects-constellation-node.node-4 {
+  bottom: 12%;
+  right: 18%;
+  animation-delay: 0.8s;
+}
+
+@keyframes constellationPulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.4);
+    box-shadow: 0 0 16px var(--purple-bright);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-glow-orb--top,
+  .projects-glow-orb--bottom,
+  .projects-constellation-node {
+    animation: none !important;
+  }
+}

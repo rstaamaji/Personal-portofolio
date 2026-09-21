@@ -1,0 +1,92 @@
+/* src/components/ArchiveCard.css */
+.archive-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.archive-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.12);
+  transform: translateY(-3px);
+}
+
+.archive-preview-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: radial-gradient(circle at 50% 50%, #151121 0%, #0A0710 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Subtle futuristic grid pattern for empty preview boxes */
+.archive-preview-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(168, 85, 247, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.archive-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+  transition: transform var(--transition-normal);
+}
+
+.archive-card:hover .archive-img {
+  transform: scale(1.04);
+}
+
+.archive-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.35) 3px,
+    rgba(0, 0, 0, 0.35) 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.archive-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.archive-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.archive-caption {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}

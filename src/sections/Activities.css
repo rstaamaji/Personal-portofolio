@@ -1,0 +1,119 @@
+/* src/sections/Activities.css */
+.activities-section {
+  position: relative;
+  z-index: 2;
+}
+
+.activities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.activity-row {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 32px;
+  display: grid;
+  grid-template-columns: 100px 1fr 120px;
+  align-items: center;
+  gap: 28px;
+  transition: all var(--transition-normal);
+}
+
+@media (max-width: 860px) {
+  .activity-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+}
+
+.activity-row:hover {
+  border-color: var(--border-accent);
+  background: var(--surface-2);
+  transform: translateX(4px);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1);
+}
+
+.activity-year-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.activity-year {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--purple-bright);
+  line-height: 1;
+}
+
+.activity-index {
+  color: var(--text-muted);
+  font-size: 0.68rem;
+}
+
+.activity-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.activity-cat-pill {
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(168, 85, 247, 0.1);
+  color: var(--purple-bright);
+  font-size: 0.65rem;
+}
+
+.activity-org {
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+}
+
+.activity-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.activity-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.activity-status-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@media (max-width: 860px) {
+  .activity-status-col {
+    justify-content: flex-start;
+  }
+}
+
+.act-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple-bright);
+}
+
+.act-status-text {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}

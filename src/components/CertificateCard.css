@@ -1,0 +1,132 @@
+/* src/components/CertificateCard.css */
+.cert-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.cert-card:hover,
+.cert-card.is-active {
+  border-color: var(--border-accent);
+  box-shadow: 0 16px 40px rgba(168, 85, 247, 0.15);
+  transform: translateY(-4px);
+}
+
+.cert-card-inner {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cert-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cert-index {
+  color: var(--purple-bright);
+}
+
+.cert-category {
+  color: var(--text-secondary);
+}
+
+.cert-verified-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid var(--border-accent);
+  color: var(--purple-bright);
+  font-size: 0.65rem;
+}
+
+.cert-verified-icon {
+  color: var(--purple-bright);
+}
+
+/* Designed Certificate Placeholder Frame */
+.cert-visual-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: radial-gradient(circle at 50% 50%, #171321 0%, #0D0A12 100%);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.cert-seal {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(168, 85, 247, 0.12);
+  border: 1.5px solid var(--purple-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--purple-bright);
+  box-shadow: 0 0 20px var(--purple-glow);
+}
+
+.cert-placeholder-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cert-issuer-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cert-frame-corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--purple-bright);
+}
+
+.cert-frame-corner.top-left { top: 6px; left: 6px; border-top: 2px solid; border-left: 2px solid; }
+.cert-frame-corner.top-right { top: 6px; right: 6px; border-top: 2px solid; border-right: 2px solid; }
+.cert-frame-corner.bottom-left { bottom: 6px; left: 6px; border-bottom: 2px solid; border-left: 2px solid; }
+.cert-frame-corner.bottom-right { bottom: 6px; right: 6px; border-bottom: 2px solid; border-right: 2px solid; }
+
+.cert-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.cert-issuer {
+  color: var(--purple-bright);
+  font-size: 0.72rem;
+  margin-bottom: 8px;
+}
+
+.cert-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}

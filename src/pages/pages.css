@@ -1,0 +1,99 @@
+/* src/pages/pages.css */
+
+/* ─── Shared: scroll margin for fixed navbar ───────────────── */
+section[id] {
+  scroll-margin-top: 92px;
+}
+
+@media (max-width: 640px) {
+  section[id] {
+    scroll-margin-top: 76px;
+  }
+}
+
+/* ─── Profile Page — bottom CTA strip ──────────────────────── */
+.page-end-cta {
+  border-top: 1px solid var(--border-subtle);
+  padding: 80px 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(168, 85, 247, 0.07) 0%, transparent 65%);
+}
+
+.page-end-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.page-end-tag {
+  color: var(--purple-bright);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.page-end-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  max-width: 520px;
+}
+
+.page-end-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid var(--border-accent);
+  color: var(--purple-bright);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.page-end-btn:hover {
+  background: rgba(168, 85, 247, 0.28);
+  border-color: var(--purple-bright);
+  box-shadow: 0 0 24px var(--purple-glow);
+  transform: translateY(-2px);
+}
+
+/* ─── Work Page — root container & top spacing ─────────────── */
+.work-page-root {
+  position: relative;
+}
+
+/* Navbar is fixed (~80px desktop, ~64px mobile).
+   Setting padding-top creates a clean, balanced buffer so
+   [01] // PROJECTS and 'Things I've built.' are completely visible
+   without being obscured or crowded under the navbar. */
+.work-page-root .projects-section {
+  padding-top: 128px; /* ~80px navbar + 48px headroom */
+}
+
+@media (max-width: 640px) {
+  .page-end-cta {
+    padding: 56px 0;
+  }
+
+  .page-end-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .work-page-root .projects-section {
+    padding-top: 96px; /* ~64px navbar + 32px headroom */
+  }
+}
+
+@media (max-width: 380px) {
+  .work-page-root .projects-section {
+    padding-top: 88px;
+  }
+}

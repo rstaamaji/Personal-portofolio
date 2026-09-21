@@ -1,0 +1,33 @@
+/* src/components/TechLogo.css */
+
+.tech-logo-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+/* Applied when parent card is hovered */
+.tech-card:hover .tech-logo-box {
+  background: rgba(168, 85, 247, 0.12);
+  border-color: var(--purple-bright);
+}
+
+.tech-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Fallback state — Terminal icon, purple tint */
+.tech-logo-fallback {
+  color: var(--purple-bright);
+}

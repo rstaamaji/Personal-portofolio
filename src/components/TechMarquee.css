@@ -1,0 +1,146 @@
+/* src/components/TechMarquee.css */
+
+/* ─── Wrapper ─────────────────────────────────────────────── */
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* prevents horizontal scrollbar on page */
+  margin: 56px 0;
+  padding: 18px 0;
+  border-top: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+  border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+}
+
+/* Hover pauses the animation — triggered on the outer wrapper */
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ─── Edge fade masks ─────────────────────────────────────── */
+.marquee-fade-left,
+.marquee-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--bg, #07060A), transparent);
+}
+
+.marquee-fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--bg, #07060A), transparent);
+}
+
+/* ─── Track ───────────────────────────────────────────────── */
+.marquee-track-outer {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 42s linear infinite;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Groups ──────────────────────────────────────────────── */
+.marquee-group {
+  display: flex;
+  align-items: center;
+  /* Equal gap so the join between group-1 end and group-2 start is the same */
+  gap: 40px;
+  padding: 0 20px; /* half the gap on each edge = 40px total spacing at join */
+}
+
+/* ─── Individual logo item ────────────────────────────────── */
+.marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: default;
+}
+
+.marquee-logo {
+  height: 36px;
+  max-width: 64px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  /* Default: greyed out */
+  filter: grayscale(1) brightness(1.15);
+  opacity: 0.55;
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.marquee-item:hover .marquee-logo {
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* ─── Mobile (<= 640px) ───────────────────────────────────── */
+@media (max-width: 640px) {
+  .marquee-wrapper {
+    margin: 40px 0;
+  }
+
+  .marquee-logo {
+    height: 30px;
+    max-width: 52px;
+  }
+
+  .marquee-group {
+    gap: 28px;
+    padding: 0 14px;
+  }
+
+  .marquee-fade-left,
+  .marquee-fade-right {
+    width: 60px;
+  }
+}
+
+/* ─── Reduced motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* Hide the duplicate group in reduced-motion mode */
+  .marquee-group[aria-hidden="true"] {
+    display: none;
+  }
+
+  /* Remove edge masks */
+  .marquee-fade-left,
+  .marquee-fade-right {
+    display: none;
+  }
+
+  /* All logos fully visible, no animation */
+  .marquee-logo {
+    filter: none;
+    opacity: 0.7;
+  }
+
+  .marquee-item:hover .marquee-logo {
+    transform: none;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,93 @@
+/* src/sections/Stack.css */
+.stack-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Category Tabs ────────────────────────────────────────── */
+.stack-category-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.stack-cat-btn {
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.stack-cat-btn:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.stack-cat-btn.active {
+  background: rgba(168, 85, 247, 0.16);
+  border-color: var(--purple-bright);
+  color: #ffffff;
+  box-shadow: 0 0 16px var(--purple-glow-soft);
+}
+
+/* ─── Tech Grid ────────────────────────────────────────────── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* ─── Tech Card ────────────────────────────────────────────── */
+.tech-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.tech-card:hover {
+  border-color: var(--border-accent);
+  background: var(--surface-2);
+  box-shadow: 0 12px 30px rgba(168, 85, 247, 0.12);
+  transform: translateY(-3px);
+}
+
+/* Card top row — logo only */
+.tech-card-top {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* ─── Card Body ────────────────────────────────────────────── */
+.tech-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tech-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tech-role {
+  font-size: 0.72rem;
+  color: var(--purple-bright);
+}
+
+.tech-context {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-top: 6px;
+}

@@ -1,0 +1,506 @@
+// src/data/portfolio.js
+// Single source of truth for Rustam Aji's portfolio data.
+// Source: Rustam Aji CV ATS.pdf & Master Prompt directives.
+//
+// CATATAN GAMBAR PROYEK:
+// - Simpan file gambar di folder:  public/image/
+// - Tulis path dengan awalan "/" dan TANPA kata "public":
+//       image: "/image/kesra-dashboard.png"
+// - Proyek tanpa gambar cukup pakai:  image: null
+//   (komponen otomatis menampilkan placeholder "SYSTEM WORKSPACE").
+// - imageAlt (opsional) = teks alternatif untuk aksesibilitas.
+
+export const profileData = {
+  identity: {
+    name: "Rustam Aji",
+    monogram: "RA",
+    role: "Full-Stack Developer & Project Manager",
+    subRole: "INFORMATICS // ENGINEER",
+    statusText: "AVAILABLE FOR WORK",
+    location: "Jumantono, Karanganyar, Central Java, Indonesia",
+    city: "Surakarta / Karanganyar",
+    country: "Indonesia",
+    coordinates: "7.6167° S, 110.9500° E",
+    email: "rustaamaji@student.uns.ac.id",
+    phone: "+62 812-1589-6785",
+    linkedin: "https://linkedin.com/in/rustam-aji-front-end-engineer",
+    github: "https://github.com/rstaamaji",
+    image: "/assets/profile.jpg", // Portrait supplied by Rustam Aji
+  },
+
+  hero: {
+    headline: {
+      line1: "I craft digital",
+      highlight: "systems",
+      line3: "& experiences.",
+    },
+    bio: "Informatics Engineering student at Universitas Sebelas Maret with hands-on experience building full-stack web systems and leading software projects.",
+    stats: [
+      { id: "exp", value: "03+", label: "Years Exp. / Learning" },
+      { id: "projects", value: "06+", label: "Projects Completed" },
+      { id: "tech", value: "12+", label: "Tech Stack & Tools" },
+    ],
+  },
+
+  about: {
+    sectionNumber: "01",
+    tag: "ABOUT",
+    title: "I build digital systems that connect software, design & technology.",
+    codeSpec: {
+      filename: "rustam.config.ts",
+      developer: "Rustam Aji",
+      role: "Full-Stack Engineer & PM",
+      institution: "Universitas Sebelas Maret (UNS)",
+      degree: "D3 Informatics Engineering (2024 – Present)",
+      coreFocus: [
+        "Full-Stack Web Systems",
+        "FastAPI & Modern Microservices",
+        "Agile Project Leadership",
+        "Cloud Architecture (AWS / Azure)"
+      ],
+      currentStatus: "Engineering high-reliability software & leading teams",
+    },
+    narrative: [
+      "Informatics Engineering student at Universitas Sebelas Maret (UNS) with hands-on experience in full-stack web development (Laravel, React, Vue.js) and project management.",
+      "Practical exposure to enterprise cloud platforms (AWS, Azure) and production payment gateway integration (Midtrans). Currently serving as Project Manager for a five-person team engineering a government welfare information system for Setda Boyolali.",
+      "Committed to clean software design, robust backend reliability, and empathetic team leadership that bridges technical implementation with strategic user impact."
+    ],
+  },
+
+  techStack: {
+    sectionNumber: "02",
+    tag: "TECH STACK",
+    title: "Technologies I work with.",
+    subtitle: "A mix of languages, frameworks, cloud platforms, and tools I use across engineering projects.",
+    categories: [
+      { id: "all", label: "All Technologies" },
+      { id: "frontend-backend", label: "Languages & Frameworks" },
+      { id: "cloud-db", label: "Cloud & Databases" },
+      { id: "tools-mgmt", label: "Tools & Management" },
+    ],
+    technologies: [
+    
+      {
+        id: "vue",
+        name: "Vue.js",
+        category: "frontend-backend",
+        version: "Vue 3",
+        role: "Frontend Framework",
+        context: "AutoGate Parkir UI",
+        icon: "vue",
+        logo: "/image/vue.svg",
+      },
+      {
+        id: "fastapi",
+        name: "FastAPI",
+        category: "frontend-backend",
+        version: "Python 3.x",
+        role: "High-Performance Backend",
+        context: "AutoGate Parkir API",
+        icon: "fastapi",
+      },
+      {
+        id: "python",
+        name: "Python",
+        category: "frontend-backend",
+        role: "Programming Language",
+        context: "FastAPI, 2D Game Dev, Scripts",
+        icon: "python",
+      },
+      {
+        id: "react",
+        name: "React",
+        category: "frontend-backend",
+        version: "React 19",
+        role: "Frontend Library",
+        context: "Modern Web Interfaces & UMKM",
+        icon: "react",
+      },
+      {
+        id: "laravel",
+        name: "Laravel",
+        category: "frontend-backend",
+        role: "PHP Framework",
+        context: "Kesra Boyolali & Full-Stack Systems",
+        icon: "laravel",
+      },
+      {
+        id: "javascript",
+        name: "JavaScript",
+        category: "frontend-backend",
+        version: "ES6+",
+        role: "Programming Language",
+        context: "Client-Side Interaction & SPAs",
+        icon: "javascript",
+      },
+      {
+        id: "php",
+        name: "PHP",
+        category: "frontend-backend",
+        role: "Server-Side Scripting",
+        context: "Laravel Backend Systems",
+        icon: "php",
+      },
+      {
+        id: "mysql",
+        name: "MySQL",
+        category: "cloud-db",
+        role: "Relational Database",
+        context: "Relational Schemas & SQL Queries",
+        icon: "mysql",
+      },
+      {
+        id: "aws",
+        name: "AWS",
+        category: "cloud-db",
+        role: "Cloud Provider",
+        context: "Certified Solutions Architect Associate",
+        icon: "aws",
+        logo: "/image/aws.svg",
+      },
+      {
+        id: "azure",
+        name: "Microsoft Azure",
+        category: "cloud-db",
+        role: "Cloud Infrastructure",
+        context: "Certified Azure Administrator (AZ-104)",
+        icon: "azure",
+      },
+      {
+        id: "midtrans",
+        name: "Midtrans",
+        category: "tools-mgmt",
+        role: "Payment Gateway",
+        context: "AutoGate Parkir Ticket Checkout",
+        icon: "credit-card",
+      },
+      {
+        id: "git",
+        name: "Git & GitHub",
+        category: "tools-mgmt",
+        role: "Version Control",
+        context: "Branching, Collaboration, CI/CD",
+        icon: "git",
+      },
+      {
+        id: "jira",
+        name: "Jira",
+        category: "tools-mgmt",
+        role: "Project Management",
+        context: "Agile Sprints, Backlogs & Roadmaps",
+        icon: "jira",
+      },
+      {
+        id: "html-css",
+        name: "HTML5 / CSS3",
+        category: "frontend-backend",
+        role: "Web Standards",
+        context: "Responsive Layouts & Semantic Web",
+        icon: "html",
+      },
+    ],
+  },
+
+  projects: {
+    sectionNumber: "01",
+    tag: "PROJECTS",
+    title: "Things I've built.",
+    subtitle: "From web applications to access-control engineering, government data systems, and creative experiments.",
+    items: [
+      {
+        id: "autogate-parkir",
+        index: "01",
+        category: "FULL-STACK // IOT ACCESS",
+        tag: "FEATURED PROJECT",
+        title: "AutoGate Parkir",
+        subtitle: "Digital entry-gate system with ANPR & automated payment.",
+        description: "Led and developed a digital entry-gate system with automated payment processing, deployed for Tahir Museum (Solo) and a campus access gate at Universitas Sebelas Maret (UNS).",
+        technicalDetails: [
+          "Built frontend with Vue.js (Vue 3 + Vite) and backend with Python (FastAPI, SQLAlchemy).",
+          "Integrated RFID/e-money card scanning and optional ANPR (Automatic Number Plate Recognition) camera feed.",
+          "Integrated Midtrans payment gateway for online ticket checkout, barcode-based ticketing, and exit verification."
+        ],
+        stack: ["Vue 3", "Vite", "Python", "FastAPI", "SQLAlchemy", "RFID/e-money", "ANPR", "Midtrans"],
+        liveUrl: null, // Real URL pending deployment
+        githubUrl: "https://github.com/rstaamaji",
+        image: "/image/autogate-dashboard.png",
+        imageAlt: "Dashboard Operasional AutoGate Parkir: gate masuk, gate keluar, dan riwayat kendaraan",
+
+      },
+      {
+        id: "kesra-boyolali",
+        index: "02",
+        category: "ENTERPRISE // GOV WELFARE",
+        tag: "GOVERNMENT INTERNSHIP",
+        title: "Kesra Information System",
+        subtitle: "Regional Secretariat of Boyolali Regency (Setda Boyolali).",
+        description: "Web-based information system for managing and recording verified data on Quran teachers (Guru Mengaji) and Islamic boarding school leaders (Pimpinan Pondok).",
+        technicalDetails: [
+          "Served as Project Manager for a five-person team building the government welfare (Kesra) information system.",
+          "Implemented database models for institutional verifications, aid distribution logs, and official reporting.",
+          "Coordinated directly with government stakeholders to translate policy workflows into robust software modules."
+        ],
+        stack: ["Laravel", "PHP", "MySQL", "JavaScript", "Bootstrap", "Jira"],
+        liveUrl: null,
+        githubUrl: "https://github.com/rstaamaji",
+        image: "/image/kesra-dashboard.png",
+        imageAlt: "Dashboard Portal Penyaluran Hibah & Bantuan Kesejahteraan Pemkab Boyolali",
+      },
+      {
+        id: "umkm-website",
+        index: "03",
+        category: "WEB APP // COMMERCIAL",
+        tag: "CLIENT PLATFORM",
+        title: "UMKM Commercial Platform",
+        subtitle: "User-friendly web platform for small and medium enterprises.",
+        description: "A tailored, user-friendly digital catalog and business presence website designed for small and medium enterprises (UMKM) to showcase local merchandise and drive regional customer outreach.",
+        technicalDetails: [
+          "Engineered responsive catalog browsing with clean product filtering.",
+          "Focused on mobile usability and rapid loading over cellular networks.",
+          "Architected clear call-to-actions for direct customer ordering and inquiry channels."
+        ],
+        stack: ["React", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
+        liveUrl: null,
+        githubUrl: "https://github.com/rstaamaji",
+        image: null,
+      },
+      {
+        id: "todo-list-app",
+        index: "04",
+        category: "COURSEWORK // SYSTEMS DESIGN",
+        tag: "ACADEMIC SYSTEM",
+        title: "To-Do List Web App",
+        subtitle: "Systems Analysis & Design Course Project.",
+        description: "Comprehensive task tracking application engineered to model clean architectural patterns, object-oriented state management, and user requirement specifications for the Systems Analysis and Design course.",
+        technicalDetails: [
+          "Developed dataflow diagrams and functional specifications prior to implementation.",
+          "Persistent task state, category prioritization, and deadline reminder queues."
+        ],
+        stack: ["JavaScript", "HTML5", "CSS3", "Systems Analysis & Design"],
+        liveUrl: null,
+        githubUrl: "https://github.com/rstaamaji",
+        image: null,
+      },
+      {
+        id: "2d-game",
+        index: "05",
+        category: "INTERACTIVE // GAME DEV",
+        tag: "CREATIVE COMPUTING",
+        title: "2D Game Development",
+        subtitle: "Custom 2D interactive mechanics & physics loop.",
+        description: "An exploratory 2D game project implementing custom game loops, frame timing, sprite animations, bounding-box collision detection, and player physics mechanics.",
+        technicalDetails: [
+          "Implemented discrete state machines for player states and interactive game entities.",
+          "Engineered sprite sheet coordinate parsing and deterministic collision handling."
+        ],
+        stack: ["Python", "Game Logic", "Canvas / Pygame", "Algorithms"],
+        liveUrl: null,
+        githubUrl: "https://github.com/rstaamaji",
+        image: "/image/roll-dashboard.jpeg",
+        imageAlt: "Dashboard Prototype Game 2D dengan mekanik pergerakan karakter dan interaksi objek",
+
+      },
+      {
+        id: "3d-blender",
+        index: "06",
+        category: "3D ASSET // MODELING",
+        tag: "SPATIAL ASSETS",
+        title: "3D Modeling in Blender",
+        subtitle: "Hard-surface models & spatial lighting scenes.",
+        description: "Exploration of hard-surface 3D modeling, quad topology, material nodes, and atmospheric lighting composition using Blender for digital environments.",
+        technicalDetails: [
+          "Designed clean geometric assets with optimized polygon budgets.",
+          "Configured realistic PBR shader materials and cinematic three-point lighting setups."
+        ],
+        stack: ["Blender", "Hard Surface Modeling", "Shading", "Lighting"],
+        liveUrl: null,
+        githubUrl: "https://github.com/rstaamaji",
+         image: "/image/blender-dashboard.png",
+        imageAlt: "Dashboard Blender 3D Modeling dengan konsep desain rumah",
+      },
+    ],
+  },
+
+  experience: {
+    sectionNumber: "03",
+    tag: "EXPERIENCE",
+    title: "Work and hands-on experience.",
+    subtitle: "A blend of software engineering, project management, and public sector collaboration.",
+    items: [
+      {
+        id: "autogate",
+        index: "01",
+        badge: "INDEPENDENT / TEAM PROJECT",
+        period: "August 2026 – December 2026",
+        role: "Project Manager & Full-Stack Developer",
+        organization: "AutoGate Parkir",
+        context: "Tahir Museum (Solo) & Universitas Sebelas Maret (UNS)",
+        summary: "Led and developed a digital entry-gate system with automated payment processing, deployed for Tahir Museum (Solo) and a campus access gate at Universitas Sebelas Maret (UNS).",
+        responsibilities: [
+          "Built the frontend with Vue.js (Vue 3 + Vite) and the backend with Python (FastAPI, SQLAlchemy), including RFID/e-money scanning and optional ANPR camera input.",
+          "Integrated the Midtrans payment gateway for online ticket payment, including barcode-based ticketing and exit payment verification.",
+          "Managed sprint planning, hardware-software interfacing, and field deployment testing at campus and museum access points."
+        ],
+        stack: ["Vue 3", "Vite", "Python", "FastAPI", "SQLAlchemy", "RFID/e-money", "ANPR", "Midtrans"],
+      },
+      {
+        id: "kesra",
+        index: "02",
+        badge: "INTERNSHIP // GOV AGENCY",
+        period: "March 2026 – July 2026",
+        role: "Software Developer (Internship) & Project Manager",
+        organization: "Kesra Division, Setda Boyolali",
+        context: "Regional Secretariat of Boyolali Regency",
+        summary: "Built a web-based information system for managing and recording data on Quran teachers (Guru Mengaji) and Islamic boarding school leaders (Pimpinan Pondok).",
+        responsibilities: [
+          "Built a web-based information system for managing and recording data on Quran teachers (Guru Mengaji) and Islamic boarding school leaders (Pimpinan Pondok).",
+          "Served as Project Manager for a five-person team developing the government welfare (Kesra) information system.",
+          "Led requirement gathering with government division heads, orchestrated sprint reviews, and ensured database schema integrity."
+        ],
+        stack: ["Laravel", "PHP", "MySQL", "JavaScript", "Team Leadership", "Jira"],
+      },
+    ],
+  },
+
+  certifications: {
+    sectionNumber: "03",
+    tag: "CREDENTIALS",
+    title: "Certificates and achievements.",
+    subtitle: "A collection of industry cloud certifications and professional credentials.",
+    items: [
+      {
+        id: "aws-saa",
+        index: "01",
+        title: "AWS Certified Solutions Architect – Associate",
+        issuer: "Amazon Web Services (AWS)",
+        badge: "CLOUD ARCHITECTURE",
+        status: "VERIFIED CREDENTIAL",
+        description: "Validation of comprehensive knowledge in architecting secure, robust, and cost-effective distributed systems on AWS.",
+        image: null, // "CERTIFICATE IMAGE PENDING"
+      },
+      {
+        id: "az-104",
+        index: "02",
+        title: "Microsoft Certified: Azure Administrator Associate (AZ-104)",
+        issuer: "Microsoft",
+        badge: "CLOUD INFRASTRUCTURE",
+        status: "VERIFIED CREDENTIAL",
+        description: "Validation of expertise in implementing, managing, and monitoring Microsoft Azure environments, compute, storage, and networking.",
+        image: null,
+      },
+      {
+        id: "oracle-foundations",
+        index: "03",
+        title: "Oracle Certified Foundations Associate",
+        issuer: "Oracle",
+        badge: "DATABASE & CLOUD FOUNDATIONS",
+        status: "VERIFIED CREDENTIAL",
+        description: "Foundational mastery in core cloud computing concepts, autonomous databases, security, and enterprise infrastructure.",
+        image: null,
+      },
+    ],
+  },
+
+  activities: {
+    sectionNumber: "02",
+    tag: "ACTIVITIES",
+    title: "Beyond the main projects.",
+    subtitle: "Organizational leadership, student government, and university initiatives that have shaped my collaboration and execution skills.",
+    items: [
+      {
+        id: "bem-internship",
+        index: "01",
+        year: "2025",
+        category: "LEADERSHIP // STUDENT GOV",
+        title: "Internship Coordinator",
+        organization: "BEM SV UNS",
+        description: "Coordinated operational structure, onboarding schedules, and performance tracking for student internship cohorts within the Vocational School Student Executive Board.",
+      },
+      {
+        id: "bem-seminar",
+        index: "02",
+        year: "2025",
+        category: "EVENT // PROJECT MGMT",
+        title: "Action Seminar Coordinator",
+        organization: "BEM SV UNS",
+        description: "Directed the planning, timeline logistics, speakers, and execution for high-impact student action and educational seminars.",
+      },
+      {
+        id: "bem-propaganda",
+        index: "03",
+        year: "2025",
+        category: "MEDIA // CREATIVE CAMPAIGNS",
+        title: "Creative Action & Propaganda Staff",
+        organization: "BEM SV UNS",
+        description: "Formulated creative messaging campaigns, public narratives, and visual propaganda materials for campus-wide advocacy initiatives.",
+      },
+      {
+        id: "uns-socialization",
+        index: "04",
+        year: "2024",
+        category: "PUBLIC RELATIONS",
+        title: "Committee Staff",
+        organization: "UNS Socialization Event",
+        description: "Collaborated in organizing and executing large-scale university outreach and orientation events for prospective students.",
+      },
+      {
+        id: "ikmvi-congress",
+        index: "05",
+        year: "2024",
+        category: "NATIONAL CONGRESS",
+        title: "Congress Staff",
+        organization: "7th Indonesian Vocational Student Family Association (IKMVI) Congress",
+        description: "Supported delegation coordination, agenda scheduling, and national proceedings for the 7th IKMVI National Congress.",
+      },
+    ],
+  },
+
+  gallery: {
+    sectionNumber: "04",
+    tag: "GALLERY",
+    title: "A look behind the scenes.",
+    subtitle: "Project documentation, system architecture, campus activities, and engineering process.",
+    items: [
+      {
+        id: "gal-01",
+        title: "AutoGate Gate Deployment & Field Testing",
+        caption: "Testing RFID scanners, ANPR camera feeds, and barrier relay controllers at Tahir Museum & UNS.",
+        image: null,
+      },
+      {
+        id: "gal-02",
+        title: "Kesra Welfare System Sprint Review",
+        caption: "Leading sprint demo and data validation workflows with the five-person engineering team.",
+        image: "/image/kesra-dashboard.png",
+      },
+      {
+        id: "gal-03",
+        title: "Action Seminar & Student Coordination",
+        caption: "Organizing logistics, stage coordination, and seminar execution for student leadership events.",
+        image: null,
+      },
+      {
+        id: "gal-04",
+        title: "7th IKMVI National Congress",
+        caption: "Facilitating delegates from across Indonesia during national vocational assemblies.",
+        image: null,
+      },
+    ],
+  },
+
+  contact: {
+    sectionNumber: "04",
+    tag: "CONTACT",
+    statement: {
+      line1: "Let's build something",
+      highlight: "worth remembering.",
+    },
+    availableFor: [
+      "Full-Stack Web Development",
+      "FastAPI & Microservices Architecture",
+      "Software Project Management (Agile / Sprints)",
+      "Cloud Deployment (AWS / Azure)",
+      "Technical Collaboration & Engineering Roles",
+    ],
+  },
+};

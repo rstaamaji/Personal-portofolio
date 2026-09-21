@@ -1,0 +1,108 @@
+/* src/sections/Footer.css */
+.footer-system {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid var(--border);
+  background: var(--bg-elevated);
+  padding: 48px 0 24px 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.footer-brand-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-monogram {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--purple-bright);
+}
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-author {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.footer-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.footer-telemetry {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.telemetry-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.telemetry-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple-bright);
+}
+
+.back-to-top-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.back-to-top-btn:hover {
+  border-color: var(--purple-bright);
+  color: var(--purple-bright);
+  transform: translateY(-2px);
+}
+
+.footer-copyright-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 12px;
+}

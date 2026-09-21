@@ -1,0 +1,11 @@
+/* src/sections/Gallery.css */
+.gallery-section {
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}

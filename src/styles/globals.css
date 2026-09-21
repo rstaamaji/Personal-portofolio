@@ -1,0 +1,181 @@
+/* src/styles/globals.css */
+
+@import './variables.css';
+@import './typography.css';
+
+/* Consistent sizing and prevent children from expanding the viewport. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg);
+  color-scheme: dark;
+  scroll-behavior: auto; /* Smooth scrolling is handled by Lenis. */
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: clip;
+  max-width: 100%;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 90% 40%, rgba(168, 85, 247, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 10% 80%, rgba(124, 58, 237, 0.03) 0%, transparent 40%);
+}
+
+/* Cybernetic fine grid overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-size: 64px 64px;
+  background-image:
+    linear-gradient(to right, rgba(190, 165, 230, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(190, 165, 230, 0.02) 1px, transparent 1px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle film grain */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.5);
+}
+
+/* Selection */
+::selection {
+  background: var(--purple-deep);
+  color: #FFFFFF;
+}
+
+/* General Layout Containers */
+.site-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.section-spacing {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+  position: relative;
+  min-width: 0;
+}
+
+/* Technical Corner Brackets */
+.has-corner-brackets {
+  position: relative;
+}
+
+.has-corner-brackets::before,
+.has-corner-brackets::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--purple);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.has-corner-brackets::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1.5px solid var(--purple);
+  border-left: 1.5px solid var(--purple);
+}
+
+.has-corner-brackets::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1.5px solid var(--purple);
+  border-right: 1.5px solid var(--purple);
+}
+
+/* Accessibility Focus Ring */
+:focus-visible {
+  outline: 2px solid var(--purple-bright);
+  outline-offset: 3px;
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Global responsive safety rules */
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+pre,
+code {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .site-container {
+    padding-left: clamp(16px, 4.5vw, 28px);
+    padding-right: clamp(16px, 4.5vw, 28px);
+  }
+
+  .section-spacing {
+    padding-top: clamp(48px, 9vw, 76px);
+    padding-bottom: clamp(48px, 9vw, 76px);
+  }
+}
+
+@media (max-width: 380px) {
+  .site-container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

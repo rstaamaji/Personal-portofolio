@@ -1,0 +1,87 @@
+/* src/styles/typography.css */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Massive Display H1 */
+.display-title {
+  font-size: clamp(3.2rem, 8vw, 7.5rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: none;
+}
+
+/* Editorial Section H2 */
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+/* Card / Subsection H3 */
+.card-title {
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Body variants */
+.body-lead {
+  font-size: clamp(1.05rem, 1.25vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.body-muted {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* Monospace Technical System */
+.mono-label,
+.technical-tag,
+.code-text,
+.section-badge,
+.timestamp {
+  font-family: 'JetBrains Mono', 'Space Mono', monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mono-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Accent Highlight */
+.text-accent {
+  color: var(--purple-bright);
+  text-shadow: 0 0 25px rgba(192, 132, 252, 0.35);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #F4F1F8 20%, #C084FC 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

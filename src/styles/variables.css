@@ -1,0 +1,51 @@
+/* src/styles/variables.css */
+:root {
+  /* Dark Architecture Backgrounds */
+  --bg: #07060A;
+  --bg-elevated: #0D0A12;
+  --surface: #111019;
+  --surface-2: #16121D;
+  --surface-3: #1F1B2A;
+  --surface-glass: rgba(17, 16, 25, 0.75);
+  
+  /* Text System */
+  --text-primary: #F4F1F8;
+  --text-secondary: #A9A3B3;
+  --text-muted: #686171;
+  --text-dim: #453F4D;
+
+  /* Technical Borders */
+  --border: rgba(190, 165, 230, 0.16);
+  --border-subtle: rgba(190, 165, 230, 0.08);
+  --border-strong: rgba(190, 165, 230, 0.36);
+  --border-accent: rgba(168, 85, 247, 0.45);
+  --border-accent-strong: rgba(192, 132, 252, 0.75);
+
+  /* Purple Accent System */
+  --purple: #A855F7;
+  --purple-bright: #C084FC;
+  --purple-deep: #7C3AED;
+  --purple-soft: #D8B4FE;
+  --purple-glow: rgba(168, 85, 247, 0.22);
+  --purple-glow-soft: rgba(168, 85, 247, 0.08);
+  --purple-glow-strong: rgba(192, 132, 252, 0.45);
+
+  /* Functional Status */
+  --status-active: #A855F7;
+  --status-active-glow: rgba(168, 85, 247, 0.4);
+  --status-live: #10B981;
+
+  /* Layout Spacing & Rhythm */
+  --section-padding-y: 120px;
+  --container-max-width: 1360px;
+  --container-padding-x: 24px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}

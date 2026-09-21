@@ -1,0 +1,262 @@
+/* src/components/PortraitPlaceholder.css */
+.portrait-container {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Orbit Ring 1 — Slow spin */
+.portrait-orbit-ring {
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  border: 1px dashed rgba(190, 165, 230, 0.22);
+  pointer-events: none;
+  animation: orbitSpin 38s linear infinite;
+}
+
+/* Orbit Ring 2 — Slightly wider, reverse & slower */
+.portrait-orbit-ring--2 {
+  inset: -34px;
+  border: 1px solid rgba(168, 85, 247, 0.1);
+  animation: orbitSpin 55s linear infinite reverse;
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Corner HUD Brackets */
+.portrait-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.7;
+}
+
+.portrait-corner--tl {
+  top: 4px; left: 4px;
+  border-top: 2px solid var(--purple-bright);
+  border-left: 2px solid var(--purple-bright);
+  animation: cornerGlow 3s ease-in-out infinite;
+}
+.portrait-corner--tr {
+  top: 4px; right: 4px;
+  border-top: 2px solid var(--purple-bright);
+  border-right: 2px solid var(--purple-bright);
+  animation: cornerGlow 3s ease-in-out infinite 0.75s;
+}
+.portrait-corner--bl {
+  bottom: 44px; left: 4px;
+  border-bottom: 2px solid var(--purple-bright);
+  border-left: 2px solid var(--purple-bright);
+  animation: cornerGlow 3s ease-in-out infinite 1.5s;
+}
+.portrait-corner--br {
+  bottom: 44px; right: 4px;
+  border-bottom: 2px solid var(--purple-bright);
+  border-right: 2px solid var(--purple-bright);
+  animation: cornerGlow 3s ease-in-out infinite 2.25s;
+}
+
+@keyframes cornerGlow {
+  0%, 100% { opacity: 0.4; box-shadow: none; }
+  50%       { opacity: 1; box-shadow: 0 0 10px var(--purple); }
+}
+
+/* Polygon Frame Wrapper */
+.portrait-poly-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 28px rgba(168, 85, 247, 0.3));
+  transition: filter var(--transition-smooth);
+}
+
+.portrait-poly-wrapper:hover {
+  filter: drop-shadow(0 0 40px rgba(192, 132, 252, 0.5));
+}
+
+/* Clipped Polygon Frame */
+.portrait-poly-frame {
+  width: 100%;
+  height: 100%;
+  background: var(--surface);
+  clip-path: polygon(15% 0%, 85% 0%, 100% 12%, 100% 88%, 85% 100%, 15% 100%, 0% 88%, 0% 12%);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Real Portrait Photo */
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  /* Subtle desaturation to integrate with dark theme */
+  filter: grayscale(20%) contrast(1.06) brightness(0.92);
+  transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portrait-poly-wrapper:hover .portrait-img {
+  filter: grayscale(0%) contrast(1.04) brightness(0.97);
+  transform: scale(1.03);
+}
+
+/* Subtle purple color tint overlay */
+.portrait-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.1) 0%,
+    transparent 50%,
+    rgba(168, 85, 247, 0.06) 100%
+  );
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.portrait-poly-wrapper:hover .portrait-photo-overlay {
+  opacity: 0.4;
+}
+
+/* Scanline effect over the photo */
+.portrait-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.18) 4px,
+    rgba(0, 0, 0, 0.18) 5px
+  );
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 2;
+}
+
+/* Bottom gradient that blends photo with the card edge */
+.portrait-bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(to top, rgba(7, 6, 10, 0.55), transparent);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Placeholder State */
+.portrait-placeholder-content {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 35%, #1A1526 0%, #0D0A12 85%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  padding: 24px;
+  text-align: center;
+}
+
+.portrait-cyber-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(190, 165, 230, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(190, 165, 230, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.portrait-monogram {
+  width: 84px;
+  height: 84px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-accent);
+  background: rgba(168, 85, 247, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--purple-bright);
+  box-shadow: 0 0 24px var(--purple-glow);
+  z-index: 2;
+}
+
+.portrait-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(13, 10, 18, 0.85);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  z-index: 2;
+}
+
+.portrait-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple-bright);
+  box-shadow: 0 0 8px var(--purple);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50%       { opacity: 1;   transform: scale(1.2); }
+}
+
+.portrait-subtag { z-index: 2; opacity: 0.8; }
+
+/* HUD Label atas: "[ RUSTAM AJI ]"
+   Diawali .portrait-container agar warna putih menang atas .mono-meta global. */
+.portrait-container .portrait-hud-top {
+  position: absolute;
+  top: -28px;
+  left: 0;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+}
+
+.portrait-container .portrait-hud-top .hud-name {
+  color: #FFFFFF;
+}
+
+.hud-bracket { color: var(--purple-bright); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .portrait-orbit-ring,
+  .portrait-corner { animation: none !important; }
+  .portrait-poly-wrapper:hover .portrait-img {
+    transform: none;
+  }
+}

@@ -1,0 +1,195 @@
+/* src/sections/Hero.css */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 140px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.9fr;
+  align-items: center;
+  gap: 48px;
+}
+
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 780px;
+  min-width: 0;
+}
+
+/* Status Pill */
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(17, 16, 25, 0.7);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  width: fit-content;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--purple-bright);
+  box-shadow: 0 0 10px var(--purple);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.pill-separator {
+  color: var(--border-strong);
+  font-size: 0.75rem;
+}
+
+.pill-muted {
+  color: var(--text-muted);
+}
+
+/* ===== Headline =====
+   Selector diawali .hero-section supaya menang atas .display-title global
+   (yang ukurannya terlalu besar). */
+.hero-section .hero-headline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  /* Ukuran lebih kecil & fluid: 2.1rem (HP) -> 4.5rem (desktop) */
+  font-size: clamp(2.1rem, 5.2vw, 4.5rem);
+  line-height: 1.1;            /* sebelumnya terlalu rapat sehingga ekor huruf terpotong */
+  letter-spacing: -0.03em;
+}
+
+/* Tiap baris tidak dipatah, jadi "&" tidak lagi sendirian di baris baru */
+.hero-section .hero-headline > span {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Kata "systems": gradien teks memakai background-clip, sehingga gradien
+   hanya tergambar di dalam kotak elemen. Kotak diperluas ke bawah supaya
+   ekor huruf "y" ikut terwarnai (tidak terpotong). */
+.hero-section .hero-headline .hero-accent-line {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.02em 0.08em 0.18em 0;
+  margin-bottom: -0.14em;      /* mengembalikan jarak antar baris seperti semula */
+  background: linear-gradient(135deg, #F4F1F8 0%, #C084FC 50%, #A855F7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 0 28px rgba(168, 85, 247, 0.4));
+}
+
+.hero-bio {
+  max-width: 620px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* CTAs */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+}
+
+.cta-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.hero-primary-btn:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+.ext-icon {
+  opacity: 0.7;
+}
+
+/* Right Column */
+.hero-portrait-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Stats Bar */
+.hero-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 24px 32px;
+  background: rgba(17, 16, 25, 0.55);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+  }
+}
+
+.hero-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-stat-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero-stat-item--role .hero-stat-value {
+  color: var(--purple-bright);
+}
+
+.hero-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 480px) {
+  .hero-stat-value {
+    font-size: 1.7rem;
+  }
+}
