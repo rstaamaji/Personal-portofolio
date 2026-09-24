@@ -56,13 +56,13 @@ export const profileData = {
         "Full-Stack Web Systems",
         "FastAPI & Modern Microservices",
         "Agile Project Leadership",
-        "Cloud Architecture (AWS / Azure)"
+        "Cloud Architecture (AWS)"
       ],
       currentStatus: "Engineering high-reliability software & leading teams",
     },
     narrative: [
       "Informatics Engineering student at Universitas Sebelas Maret (UNS) with hands-on experience in full-stack web development (Laravel, React, Vue.js) and project management.",
-      "Practical exposure to enterprise cloud platforms (AWS, Azure) and production payment gateway integration (Midtrans). Currently serving as Project Manager for a five-person team engineering a government welfare information system for Setda Boyolali.",
+      "Practical exposure to enterprise cloud platforms (AWS) and production payment gateway integration (Midtrans). Currently serving as Project Manager for a five-person team engineering a government welfare information system for Setda Boyolali.",
       "Committed to clean software design, robust backend reliability, and empathetic team leadership that bridges technical implementation with strategic user impact."
     ],
   },
@@ -154,17 +154,9 @@ export const profileData = {
         name: "AWS",
         category: "cloud-db",
         role: "Cloud Provider",
-        context: "Certified Solutions Architect Associate",
+        context: "AWS Academy Graduate - Cloud Foundations",
         icon: "aws",
         logo: "/image/aws.svg",
-      },
-      {
-        id: "azure",
-        name: "Microsoft Azure",
-        category: "cloud-db",
-        role: "Cloud Infrastructure",
-        context: "Certified Azure Administrator (AZ-104)",
-        icon: "azure",
       },
       {
         id: "midtrans",
@@ -535,7 +527,7 @@ export const profileData = {
       "Full-Stack Web Development",
       "FastAPI & Microservices Architecture",
       "Software Project Management (Agile / Sprints)",
-      "Cloud Deployment (AWS / Azure)",
+      "Cloud Deployment (AWS)",
       "Technical Collaboration & Engineering Roles",
     ],
   },
